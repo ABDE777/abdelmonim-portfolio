@@ -106,7 +106,7 @@ const AboutMe = () => {
               <div className="w-full h-full overflow-hidden rounded-full border-4 border-purple-500/30 relative z-10">
                 <div className="w-full h-full rounded-full overflow-hidden" style={{ background: "linear-gradient(45deg, rgba(139, 92, 246, 0.3), rgba(91, 33, 182, 0.3))" }}>
                   <img 
-                    src="/lovable-uploads/b8a5bce1-c6d7-474b-88cb-b257269abe1b.png" 
+                    src="/lovable-uploads/4.png" 
                     alt="Abd El Monim Mazgoura"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
