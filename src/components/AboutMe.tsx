@@ -53,14 +53,7 @@ const AboutMe = () => {
               Mon objectif : créer des expériences numériques performantes et innovantes.
             </p>
 
-            <div className="space-y-4">
-              <h3 className="text-white text-xl font-semibold">💡 Ce que je fais :</h3>
-              <ul className="text-gray-300 space-y-2 list-disc pl-5">
-                <li><span className="text-purple-400 font-semibold">Développement Web</span></li>
-                <li><span className="text-purple-400 font-semibold">Apprentissage Continu</span></li>
-                <li><span className="text-purple-400 font-semibold">Collaboration & Innovation</span></li>
-              </ul>
-            </div>
+           
 
             {/* CTA Buttons with 3D Effect */}
             <div className="flex flex-col sm:flex-row gap-4 w-full animate-fade-in" style={{ animationDelay: "600ms" }}>
