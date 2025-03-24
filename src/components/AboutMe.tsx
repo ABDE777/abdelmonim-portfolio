@@ -30,55 +30,47 @@ const AboutMe = () => {
   return (
     <section 
       id="about" 
-      className="min-h-screen flex items-center justify-center py-24 px-6 md:px-12 bg-[#111827]"
+      className="min-h-screen flex items-center justify-center py-24 px-6 md:px-12 bg-[#0a0a0a] relative overflow-hidden"
     >
+      {/* Effet de glitch lumineux */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-blue-600 to-pink-500 opacity-10 blur-[120px]"></div>
+
       <div ref={sectionRef} className="max-w-6xl w-full mx-auto animate-on-scroll">
         <div className="flex flex-col md:flex-row items-center justify-between gap-16">
-          {/* Text Section */}
+          {/* Section Texte */}
           <div className="md:w-1/2 space-y-8">
             <div className="space-y-2 animate-slide-in-left" style={{ animationDelay: "200ms" }}>
-              <span className="text-purple-500 text-sm tracking-wider uppercase font-semibold">
+              <span className="text-pink-500 text-sm tracking-wider uppercase font-semibold">
                 À PROPOS DE MOI
               </span>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight glitch-effect">
                 Abd El Monim<br />Mazgoura
               </h2>
             </div>
 
-            {/* Description - Shortened */}
             <p className="text-lg text-gray-300 leading-relaxed animate-fade-in" style={{ animationDelay: "400ms" }}>
-              Développeur <span className="text-purple-400 font-semibold">Full Stack</span> en formation,
-              passionné par le web et les technologies modernes. 
+              Développeur <span className="text-blue-400 font-semibold">Full Stack</span> en formation, passionné par le web et les technologies modernes. 
               Mon objectif : créer des expériences numériques performantes et innovantes.
             </p>
 
-            {/* CTA Buttons with 3D Effect */}
+            {/* Boutons avec effet neon */}
             <div className="flex flex-col sm:flex-row gap-4 w-full animate-fade-in" style={{ animationDelay: "600ms" }}>
               <a 
                 href="#contact" 
-                className="button-3d bg-purple-600 text-white rounded-md hover:bg-purple-700 text-center font-medium transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md"
+                className="button-3d bg-blue-600 text-white rounded-md hover:bg-blue-700 text-center font-medium transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md neon-btn"
               >
                 Me Contacter
               </a>
               <a 
                 href="#projects" 
-                className="button-3d border border-purple-600 text-purple-500 rounded-md hover:bg-purple-600/10 text-center font-medium transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md"
+                className="button-3d border border-blue-600 text-blue-500 rounded-md hover:bg-blue-600/10 text-center font-medium transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md neon-btn"
               >
                 Voir Projets
               </a>
               <a 
                 href="/resume.pdf" 
                 download 
-                className="button-3d flex items-center justify-center gap-2 bg-white text-gray-900 rounded-md hover:bg-gray-100 font-medium w-full sm:w-auto transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md"
-                onClick={(e) => {
-                  // Check if the file exists, if not, prevent the default action
-                  const link = document.createElement('a');
-                  link.href = '/resume.pdf';
-                  link.onabort = () => {
-                    e.preventDefault();
-                    alert("Le CV n'est pas disponible pour le moment.");
-                  };
-                }}
+                className="button-3d flex items-center justify-center gap-2 bg-white text-gray-900 rounded-md hover:bg-gray-100 font-medium w-full sm:w-auto transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md neon-btn"
               >
                 <Download className="w-4 h-4" />
                 Télécharger CV
@@ -86,24 +78,32 @@ const AboutMe = () => {
             </div>
           </div>
 
-          {/* Image Section */}
+          {/* Section Image avec effet Neon et Animation */}
           <div ref={imageRef} className="md:w-1/2 flex justify-center animate-slide-in-right relative" style={{ animationDelay: "300ms" }}>
-            <div className="absolute -top-10 right-0 bg-gray-900/80 backdrop-blur-lg p-3 rounded-lg shadow-md border border-purple-500/30 z-20 animate-float">
-              <p className="text-white font-medium text-sm">Développeur Full Stack<br />(Phase d'apprentissage)</p>
+            <div className="absolute -top-12 right-0 bg-gray-900/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-blue-500/20 z-20 animate-float">
+              <p className="text-white font-medium">Développeur Full Stack<br />(Phase d'apprentissage)</p>
             </div>
 
-            <div className="w-72 h-72 md:w-[300px] md:h-[300px] rounded-xl overflow-hidden relative border-2 border-purple-500/50 shadow-lg">
-              <img 
-                src="/lovable-uploads/2.png" 
-                alt="Abd El Monim Mazgoura"
-                className="w-full h-full object-cover rounded-xl"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "https://via.placeholder.com/300x300?text=Abd+El+Monim";
-                }}
-              />
+            <div className="relative w-72 h-72 md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500/30 relative z-10 animate-spin-slow">
+                <div className="w-full h-full rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg" style={{ background: "linear-gradient(45deg, rgba(0, 132, 255, 0.3), rgba(255, 0, 255, 0.3))" }}>
+                  <img 
+                    src="/lovable-uploads/2.png" 
+                    alt="Abd El Monim Mazgoura"
+                    className="w-full h-full object-cover object-center"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "https://via.placeholder.com/300x300?text=Abd+El+Monim";
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Effet Néon autour de l'image */}
+              <div className="absolute top-0 left-0 w-full h-full rounded-full border-2 border-blue-500/50 animate-pulse"></div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
