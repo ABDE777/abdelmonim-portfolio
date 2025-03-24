@@ -84,11 +84,11 @@ const AboutMe = () => {
               <p className="text-white font-medium">Développeur Full Stack<br />(Phase d'apprentissage)</p>
             </div>
 
-            <div className="relative w-72 h-72 md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
+            <div className="relative w-80 h-80 md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500/30 relative z-10 animate-spin-slow">
                 <div className="w-full h-full rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg" style={{ background: "linear-gradient(45deg, rgba(0, 132, 255, 0.3), rgba(255, 0, 255, 0.3))" }}>
                   <img 
-                    src="/lovable-uploads/2.png" 
+                    src="/lovable-uploads/3.png" 
                     alt="Abd El Monim Mazgoura"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
