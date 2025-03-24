@@ -88,30 +88,22 @@ const AboutMe = () => {
 
           {/* Image Section */}
           <div ref={imageRef} className="md:w-1/2 flex justify-center animate-slide-in-right relative" style={{ animationDelay: "300ms" }}>
-  <div className="absolute -top-12 right-0 bg-gray-900/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-purple-500/20 z-20 animate-float">
-    <p className="text-white font-medium">Développeur Full Stack<br />(Phase d'apprentissage)</p>
-  </div>
+            <div className="absolute -top-10 right-0 bg-gray-900/80 backdrop-blur-lg p-3 rounded-lg shadow-md border border-purple-500/30 z-20 animate-float">
+              <p className="text-white font-medium text-sm">Développeur Full Stack<br />(Phase d'apprentissage)</p>
+            </div>
 
-  <div className="w-80 h-80 md:w-[350px] md:h-[350px] rounded-full overflow-hidden relative">
-    <div className="w-full h-full overflow-hidden rounded-full border-4 border-purple-500/30 relative z-10">
-      <div className="w-full h-full rounded-full overflow-hidden" style={{ background: "linear-gradient(45deg, rgba(139, 92, 246, 0.3), rgba(91, 33, 182, 0.3))" }}>
-        <img 
-          src="/lovable-uploads/2.png" 
-          alt="Abd El Monim Mazgoura"
-          className="w-full h-full object-cover object-center"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = "https://via.placeholder.com/350x350?text=Abd+El+Monim";
-          }}
-        />
-      </div>
-    </div>
-
-    {/* Circular gradient border */}
-    <div className="absolute top-0 left-0 w-full h-full rounded-full border-2 border-purple-500/50" style={{ transform: "scale(1.2)" }}></div>
-  </div>
-</div>
-
+            <div className="w-72 h-72 md:w-[300px] md:h-[300px] rounded-xl overflow-hidden relative border-2 border-purple-500/50 shadow-lg">
+              <img 
+                src="/lovable-uploads/2.png" 
+                alt="Abd El Monim Mazgoura"
+                className="w-full h-full object-cover rounded-xl"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://via.placeholder.com/300x300?text=Abd+El+Monim";
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
