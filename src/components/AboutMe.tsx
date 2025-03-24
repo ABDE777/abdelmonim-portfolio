@@ -89,14 +89,14 @@ const AboutMe = () => {
               <div className="absolute inset-0 w-full h-full rounded-full bg-purple-500/30 blur-3xl opacity-50 group-hover:opacity-100 transition duration-500"></div>
 
               {/* Image */}
-              <div className="w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden border-[6px] border-purple-500/50 shadow-2xl transition-transform transform group-hover:scale-105 duration-500">
+              <div className="w-[450px] h-[450px] md:w-[600px] md:h-[600px] rounded-full overflow-hidden border-[6px] border-purple-500/50 shadow-2xl transition-transform transform group-hover:scale-105 duration-500">
                 <img 
-                  src="/lovable-uploads/1.png" 
+                  src="/lovable-uploads/2.png" 
                   alt="Abd El Monim Mazgoura"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "https://via.placeholder.com/500x500?text=Abd+El+Monim";
+                    target.src = "https://via.placeholder.com/600x600?text=Abd+El+Monim";
                   }}
                 />
               </div>
