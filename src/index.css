@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --portfolio-accent: #8B5CF6;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans scroll-smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition-colors duration-300 text-center;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm rounded-xl border border-white/10;
+  }
+  
+  /* 3D Button Effect */
+  .button-3d {
+    @apply px-8 py-3 relative;
+    box-shadow: 0 6px 10px -3px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .button-3d:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button-3d:active {
+    box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* 3D Card Effect */
+  .card-3d {
+    @apply transition-all duration-500 relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .card-3d:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(-10deg);
+    box-shadow: 0 30px 40px -20px rgba(139, 92, 246, 0.3);
+  }
+  
+  .card-content-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+  
+  .card-3d:hover .card-content-3d {
+    transform: translateZ(30px);
+  }
+}
+
+/* Animation definitions */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  opacity: 0;
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
